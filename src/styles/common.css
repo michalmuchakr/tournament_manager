@@ -1,0 +1,72 @@
+html {
+  height: 100%; }
+
+nav.navbar {
+  padding: 3px 16px;
+  border-bottom: 2px solid #BE4248; }
+  nav.navbar .auth {
+    min-width: 315px; }
+    nav.navbar .auth .nav-link {
+      color: #292b2c; }
+      nav.navbar .auth .nav-link .active {
+        border: 1px solid #be4248; }
+        nav.navbar .auth .nav-link .active:hover {
+          color: #292b2c; }
+
+.app {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 40px; }
+
+.pageHeader {
+  justify-content: space-between;
+  align-items: center; }
+
+.table thead tr th {
+  vertical-align: middle; }
+  .table thead tr th.narrow {
+    width: 100px;
+    word-wrap: nowrap;
+    text-overflow: ellipsis; }
+    .table thead tr th.narrow td {
+      vertical-align: middle; }
+      .table thead tr th.narrow td.narrow {
+        width: 100px;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+
+.sticker {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -o-sticky;
+  position: -ms-sticky;
+  position: sticky;
+  top: 10px; }
+
+footer {
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: #292b2c;
+  color: rgba(255, 255, 255, 0.5); }
+
+footer h6 {
+  margin: 0;
+  font-weight: 300;
+  line-height: 15px;
+  font-size: 15px; }
+
+.transparent-bg {
+  background: transparent; }
+
+.txt-over {
+  white-space: nowrap;
+  width: 12em;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.w-33 {
+  width: 33.33333333%; }
