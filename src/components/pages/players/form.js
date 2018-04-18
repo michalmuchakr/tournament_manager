@@ -5,6 +5,9 @@ import { updatePlayer,
          setPlayerToEdit } from 'actions/players_global';
 import Message from '../../messages/message';
 
+import { I18n } from 'react-redux-i18n';
+import { Translate } from 'react-redux-i18n';
+
 class PlayerForm extends Component {
   constructor(props) {
     super(props);
@@ -87,8 +90,8 @@ class PlayerForm extends Component {
               <div className="modal-header">
                 <h5 className="modal-title">
                 {this.state.editing
-                  ? <span>Edit player</span>
-                  : <span>Add new player</span>
+                  ? <span><Translate value='pages.players.player.form.editPlayer'/></span>
+                  : <span><Translate value='pages.players.player.form.addPlayer'/></span>
                 }
                 </h5>
                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
@@ -98,25 +101,31 @@ class PlayerForm extends Component {
 
               <div className="modal-body">
                 {this.props.waitForSavePlayer &&
-                  <Message mgsRole='info' mgs='waiting' />
+                  <Message mgsRole='info' mgs={I18n.t('pages.players.player.form.waiting')} />
                 }
 
                 <div className="form-group">
-                  <label htmlFor="playerNameInput">Player Name</label>
+                  <label htmlFor="playerNameInput">
+                    <Translate value='pages.players.player.form.firstName'/>
+                  </label>
                   <input className="form-control" id='playerNameInput' type="text" name='name'
                     autoComplete='name' value={this.state.data.name} onChange={this.onChange} />
                   <small className="form-text text-danger">{this.state.errors.name}</small>
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="playerLastName">Player Last Name</label>
+                  <label htmlFor="playerLastName">
+                    <Translate value='pages.players.player.form.lastName'/>
+                  </label>
                   <input className="form-control" id='playerLastName' type="text" name='last_name'
                     autoComplete='playerLastName' value={this.state.data.last_name} onChange={this.onChange} />
                   <small className="form-text text-danger">{this.state.errors.last_name}</small>
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="playerEmail">Email</label>
+                  <label htmlFor="playerEmail">
+                    <Translate value='pages.players.player.form.email'/>
+                  </label>
                   <input className="form-control" id='playerEmail' type="text" name='email'
                     autoComplete='email' value={this.state.data.email} onChange={this.onChange} />
                   <small className="form-text text-danger">{this.state.errors.email}</small>
@@ -126,17 +135,21 @@ class PlayerForm extends Component {
                   <div className="collapse" id="collapseExample">
 
                     <div className="form-group">
-                      <label htmlFor="playerPosition">Default Position</label>
+                      <label htmlFor="playerPosition">
+                        <Translate value='pages.players.player.form.position'/>
+                      </label>
                       <select value={this.state.data.position} className="form-control"
                         id="playerPosition" name='position' onChange={this.onChange}>
-                        <option value='whatever'>obojętnie</option>
-                        <option value='attack'>atak</option>
-                        <option value='defence'>obrona</option>
+                        <option value='whatever'>{I18n.t('pages.players.player.position.whatever')}</option>
+                        <option value='attack'>{I18n.t('pages.players.player.position.attack')}</option>
+                        <option value='defence'>{I18n.t('pages.players.player.position.defence')}</option>
                       </select>
                     </div>
 
                     <div className="form-group">
-                      <label htmlFor="playerDescript">Desctipt</label>
+                      <label htmlFor="playerDescript">
+                        <Translate value='pages.players.player.form.descript'/>
+                      </label>
                       <textarea className="form-control" id="playerDescript" rows="3" name='descript'
                         value={this.state.data.descript} onChange={this.onChange} />
                       <small className="form-text text-danger">{this.state.errors.descript}</small>
@@ -144,21 +157,27 @@ class PlayerForm extends Component {
 
                     <div className="form-group">
                       <div className="col-12 px-0">
-                        <label htmlFor="playerEmail d-block">Gender</label>
+                        <label htmlFor="playerEmail d-block">
+                          <Translate value='pages.players.player.form.gender'/>
+                        </label>
                       </div>
                       <label className="custom-control custom-radio">
                           <input id="playerGenderMale" name="gender" type="radio" className="custom-control-input"
                             value="male" checked={this.state.data.gender === 'male'}
                             onChange={this.onChange}/>
                         <span className="custom-control-indicator" />
-                        <span className="custom-control-description">Male</span>
+                        <span className="custom-control-description">
+                          <Translate value='pages.players.player.form.male'/>
+                        </span>
                       </label>
                       <label className="custom-control custom-radio">
                         <input id="playerGenderFemale" name="gender" type="radio" className="custom-control-input"
                           value="female" checked={this.state.data.gender === 'female'}
                           onChange={this.onChange}/>
                         <span className="custom-control-indicator" />
-                        <span className="custom-control-description">Female</span>
+                        <span className="custom-control-description">
+                          <Translate value='pages.players.player.form.female'/>
+                        </span>
                       </label>
                     </div>
 
@@ -169,13 +188,10 @@ class PlayerForm extends Component {
               </div>
               <div className="modal-footer">
                 <a className="btn btn-primary mr-auto" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                  more
+                  <Translate value='pages.players.player.form.more'/>
                 </a>
                 <button type="submit" className="btn btn-secondary">
-                  {this.state.editing
-                    ? <span>Update player</span>
-                    : <span>Add player</span>
-                  }
+                  <span><Translate value='pages.players.player.form.save'/></span>
                 </button>
               </div>
             </form>

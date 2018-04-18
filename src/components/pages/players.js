@@ -11,6 +11,9 @@ import PlayersList from './players/players_list';
 import AddNewPlayer from './players/players_add_new';
 import Message from 'components/messages/message';
 
+import { I18n } from 'react-redux-i18n';
+import { Translate } from 'react-redux-i18n';
+
 class Players extends Component {
   componentDidMount() {
     this.props.setWaitPlayers(true);
@@ -41,7 +44,9 @@ class Players extends Component {
           <div className="pageHeader mb-3 d-flex justify-content-between align-items-center">
             <h1>
               <span className="fa fa-users mr-3" aria-hidden="true"></span>
-              <span>Players</span>
+              <span>
+                <Translate value='pages.players.mainHeader' />
+              </span>
             </h1>
             <div className="ml-auto">
               <AddNewPlayer newPlayer={this.newPlayer}/>
@@ -53,11 +58,11 @@ class Players extends Component {
           ? <div className="players-list">
               { this.props.players
                 ? <PlayersList editPlayer={this.editPlayer} {...this.props} />
-                : <Message mgsRole='info' mgs='No players added, yet!' />
+                : <Message mgsRole='info' mgs={I18n.t('pages.players.noPlayers')} />
               }
               <PlayerForm editHandler = {this.props.editHandler} />
             </div>
-          : <Message mgsRole='info' mgs='Proszę o chwile cierpliwości' />
+          : <Message mgsRole='info' mgs={I18n.t('pages.players.patience')} />
         }
       </div>
     );

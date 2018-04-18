@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import { Translate } from 'react-redux-i18n';
+
 class SinglePlayer extends Component {
   handleDelete = () => {
     let data = {
@@ -11,21 +13,20 @@ class SinglePlayer extends Component {
   }
 
   renderPositionBadge() {
-    let humanPosition, badgeClass;
+    let badgeClass;
 
     if (this.props.player.position === 'attack') {
-      humanPosition = 'attacker';
       badgeClass = 'badge-warning';
     } else if (this.props.player.position === 'defence') {
-      humanPosition = 'defender';
       badgeClass = 'badge-success';
     } else {
-      humanPosition = 'whatever';
       badgeClass = 'badge-info';
     }
 
     return (
-      <span className={ 'badge ' + badgeClass }>{ humanPosition }</span>
+      <span className={ 'badge ' + badgeClass }>
+        <Translate value={'pages.players.player.position.' + this.props.player.position } />
+      </span>
     )
   }
 
@@ -45,9 +46,13 @@ class SinglePlayer extends Component {
               <div onClick={() => this.props.editPlayer(this.props.player)}
                     className="btn btn-secondary"
                     data-toggle="modal"
-                    data-target="#addEditPlayer">Edit</div>
+                    data-target="#addEditPlayer">
+                <Translate value="pages.players.player.edit" />
+              </div>
 
-              <div onClick={() => this.handleDelete()} className="btn btn-secondary">Archive</div>
+              <div onClick={() => this.handleDelete()} className="btn btn-secondary">
+                <Translate value="pages.players.player.archive" />
+              </div>
             </div>
           }
         </div>
