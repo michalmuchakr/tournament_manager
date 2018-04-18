@@ -69,8 +69,9 @@ class PlayerForm extends Component {
 
   validateInputs = (data) => {
     const errors = {};
-    if (!data.name) errors.name = "Player name can't be blank!";
-    if (!data.email) errors.email = "Player email can't be blank!";
+    if (!data.name) errors.name = "Player's name can't be blank!";
+    if (!data.last_name) errors.last_name = "Player's last name can't be blank!";
+    if (!data.email) errors.email = "Player's email can't be blank!";
     return errors;
   };
 

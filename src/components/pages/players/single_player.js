@@ -15,14 +15,14 @@ class SinglePlayer extends Component {
       <div className="card mb-2">
         <div className="card-block d-flex align-items-center py-2 px-3">
           <div className="d-block">
-            <h4 className="card-title mb-0">{ this.props.player.name }</h4>
+            <h4 className="card-title mb-0">{ this.props.player.name } { this.props.player.last_name }</h4>
             <h5 className='small mt-2'>{ this.props.player.email }</h5>
           </div>
           {this.props.currentUser &&
             <div className="btn-group ml-auto" role="group" >
-              <div onClick={() => this.props.editPlayer(this.props.player)} 
+              <div onClick={() => this.props.editPlayer(this.props.player)}
                     className="btn btn-secondary"
-                    data-toggle="modal" 
+                    data-toggle="modal"
                     data-target="#addEditPlayer">Edit</div>
 
               <div onClick={() => this.handleDelete()} className="btn btn-secondary">Archive</div>
