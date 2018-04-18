@@ -19,6 +19,10 @@ const PlayerSchema = new mongoose.Schema({
   descript: {
     type: String,
     default: ''
+  },
+  position: {
+    type: String,
+    default: 'whatever'
   }
 });
 

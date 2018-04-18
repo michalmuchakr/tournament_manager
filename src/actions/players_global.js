@@ -46,6 +46,7 @@ export const deletePlayer = (data) => {
 export const updatePlayer = (data) => {
   return dispatch => {
     dispatch(setWaitPlayerForSave(true))
+    console.log(data);
     return fetch('/api/updateplayers', {
       method: 'post',
       body: JSON.stringify(data),

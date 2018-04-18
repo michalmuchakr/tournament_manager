@@ -10,13 +10,35 @@ class SinglePlayer extends Component {
     this.props.deletePlayer(data);
   }
 
+  renderPositionBadge() {
+    let humanPosition, badgeClass;
+
+    if (this.props.player.position === 'attack') {
+      humanPosition = 'attacker';
+      badgeClass = 'badge-warning';
+    } else if (this.props.player.position === 'defence') {
+      humanPosition = 'defender';
+      badgeClass = 'badge-success';
+    } else {
+      humanPosition = 'whatever';
+      badgeClass = 'badge-info';
+    }
+
+    return (
+      <span className={ 'badge ' + badgeClass }>{ humanPosition }</span>
+    )
+  }
+
   render() {
     return (
       <div className="card mb-2">
         <div className="card-block d-flex align-items-center py-2 px-3">
           <div className="d-block">
-            <h4 className="card-title mb-0">{ this.props.player.name } { this.props.player.last_name }</h4>
+            <h4 className="card-title mb-0">
+              { this.props.player.name } { this.props.player.last_name }
+            </h4>
             <h5 className='small mt-2'>{ this.props.player.email }</h5>
+            <p>{ this.renderPositionBadge() }</p>
           </div>
           {this.props.currentUser &&
             <div className="btn-group ml-auto" role="group" >

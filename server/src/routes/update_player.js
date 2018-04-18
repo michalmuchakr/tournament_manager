@@ -24,6 +24,7 @@ router.post('/', (req, res) => {
           last_name: req.body.last_name,
           email: req.body.email,
           descript: req.body.descript,
+          position: req.body.position,
           _id: req.body._id
         });
 

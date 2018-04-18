@@ -27,7 +27,8 @@ class Players extends Component {
         name: '',
         last_name: '',
         email: '',
-        descript: ''
+        descript: '',
+        position: 'whatever'
       }
     this.props.setPlayerToEdit(editPlayer, false);
   }

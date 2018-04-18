@@ -125,11 +125,12 @@ class PlayerForm extends Component {
                   <div className="collapse" id="collapseExample">
 
                     <div className="form-group">
-                      <label htmlFor="default_position">Default Position</label>
-                      <select className="form-control" id="exampleSelect1">
-                        <option>obojętnie</option>
-                        <option>atak</option>
-                        <option>obrona</option>
+                      <label htmlFor="playerPosition">Default Position</label>
+                      <select value={this.state.data.position} className="form-control"
+                        id="playerPosition" name='position' onChange={this.onChange}>
+                        <option value='whatever'>obojętnie</option>
+                        <option value='attack'>atak</option>
+                        <option value='defence'>obrona</option>
                       </select>
                     </div>
 
