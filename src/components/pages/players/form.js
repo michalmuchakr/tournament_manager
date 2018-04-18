@@ -134,8 +134,8 @@ class PlayerForm extends Component {
 
                     <div className="form-group">
                       <label htmlFor="playerDescript">Desctipt</label>
-                      <textarea className="form-control" id="playerDescript" rows="3"
-                              defaultValue={this.state.data.descript} onChange={this.onChange} />
+                      <textarea className="form-control" id="playerDescript" rows="3" name='descript'
+                        value={this.state.data.descript} onChange={this.onChange} />
                       <small className="form-text text-danger">{this.state.errors.descript}</small>
                     </div>
 

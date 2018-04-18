@@ -15,6 +15,10 @@ const PlayerSchema = new mongoose.Schema({
   deleted: {
     type: Boolean,
     default: false
+  },
+  descript: {
+    type: String,
+    default: ''
   }
 });
 
