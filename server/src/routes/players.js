@@ -15,6 +15,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   const player = new PlayerModel ({
           name: req.body.name,
+          last_name: req.body.last_name,
           email: req.body.email
         }),
         savePromise = new Promise((resolve, reject) => {
