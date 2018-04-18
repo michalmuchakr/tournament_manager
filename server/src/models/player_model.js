@@ -23,6 +23,10 @@ const PlayerSchema = new mongoose.Schema({
   position: {
     type: String,
     default: 'whatever'
+  },
+  gender: {
+    type: String,
+    default: ''
   }
 });
 

@@ -25,6 +25,7 @@ router.post('/', (req, res) => {
           email: req.body.email,
           descript: req.body.descript,
           position: req.body.position,
+          gender: req.body.gender,
           _id: req.body._id
         });
 

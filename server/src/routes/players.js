@@ -18,7 +18,8 @@ router.post('/', (req, res) => {
           last_name: req.body.last_name,
           email: req.body.email,
           descript: req.body.descript,
-          position: req.body.position
+          position: req.body.position,
+          gender: req.body.gender,
         }),
         savePromise = new Promise((resolve, reject) => {
           player.save()

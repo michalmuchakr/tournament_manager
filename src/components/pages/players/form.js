@@ -14,7 +14,8 @@ class PlayerForm extends Component {
         email: '',
         id: '',
         last_name: '',
-        descript: ''
+        descript: '',
+        gender: ''
       },
       errors: {},
       message: {
@@ -146,14 +147,18 @@ class PlayerForm extends Component {
                         <label htmlFor="playerEmail d-block">Gender</label>
                       </div>
                       <label className="custom-control custom-radio">
-                        <input id="radio1" name="radio" type="radio" className="custom-control-input" />
-                        <span className="custom-control-indicator" />
-                        <span className="custom-control-description">Female</span>
-                      </label>
-                      <label className="custom-control custom-radio">
-                        <input id="radio2" name="radio" type="radio" className="custom-control-input" />
+                          <input id="playerGenderMale" name="gender" type="radio" className="custom-control-input"
+                            value="male" checked={this.state.data.gender === 'male'}
+                            onChange={this.onChange}/>
                         <span className="custom-control-indicator" />
                         <span className="custom-control-description">Male</span>
+                      </label>
+                      <label className="custom-control custom-radio">
+                        <input id="playerGenderFemale" name="gender" type="radio" className="custom-control-input"
+                          value="female" checked={this.state.data.gender === 'female'}
+                          onChange={this.onChange}/>
+                        <span className="custom-control-indicator" />
+                        <span className="custom-control-description">Female</span>
                       </label>
                     </div>
 
