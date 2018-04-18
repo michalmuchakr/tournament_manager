@@ -13,7 +13,7 @@ class PlayerForm extends Component {
         name: '',
         email: '',
         id: '',
-        playerLastNameInput: '',
+        last_name: '',
         descript: ''
       },
       errors: {},
@@ -35,7 +35,7 @@ class PlayerForm extends Component {
       }
     })
   };
-  
+
   componentWillReceiveProps(nextProps) {
     this.setState({
       ...this.state,
@@ -57,7 +57,7 @@ class PlayerForm extends Component {
       this.submitData(data);
     }
   };
-  
+
   submitData = (data) => {
     if (this.state.editing) {
       this.props.setPlayerToEdit(data, true);
@@ -131,7 +131,7 @@ class PlayerForm extends Component {
                         <option>obrona</option>
                       </select>
                     </div>
-                    
+
                     <div className="form-group">
                       <label htmlFor="playerDescript">Desctipt</label>
                       <textarea className="form-control" id="playerDescript" rows="3"

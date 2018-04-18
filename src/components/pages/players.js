@@ -25,6 +25,7 @@ class Players extends Component {
     let editPlayer = {
         id: '',
         name: '',
+        last_name: '',
         email: ''
       }
     this.props.setPlayerToEdit(editPlayer, false);
@@ -35,16 +36,16 @@ class Players extends Component {
       <div className="page col-11 mt-3 mx-auto">
         <div className='players'>
           <div className="pageHeader mb-3 d-flex justify-content-between align-items-center">
-            <h1> 
+            <h1>
               <span className="fa fa-users mr-3" aria-hidden="true"></span>
-              <span>Players</span> 
+              <span>Players</span>
             </h1>
             <div className="ml-auto">
               <AddNewPlayer newPlayer={this.newPlayer}/>
             </div>
           </div>
         </div>
-        
+
         {!this.props.waitPlayers
           ? <div className="players-list">
               { this.props.players
