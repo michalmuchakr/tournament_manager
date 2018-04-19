@@ -28,9 +28,34 @@ const translationsObject = {
             save: 'Save',
             waiting: 'Waiting...',
             male: 'Male',
-            female: 'Female'
-          }
+            female: 'Female',
+            errors: {
+              blank: '%{field} cannot be blank!'
+            },
+          },
         },
+      },
+    },
+    shared: {
+      nav: {
+        brand: 'Tournament Manager',
+        home: 'Home',
+        players: 'Players',
+        games: 'Games',
+        userPanel: 'User Panel',
+        welcomeUser: 'Welcome, %{userName}',
+        adminDashboard: 'Admin Dashboard',
+        logOut: 'Log Out'
+      },
+      pagination: {
+        first: 'First',
+        prev: '<',
+        next: '>',
+        last: 'Last',
+        ofPages: 'of %{count} pages',
+        ofPages_1: 'of %{count} page',
+        itemsPerPage: '%{count} per page',
+        searchFor: 'Search for...',
       },
     },
   },

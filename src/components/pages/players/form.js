@@ -73,9 +73,9 @@ class PlayerForm extends Component {
 
   validateInputs = (data) => {
     const errors = {};
-    if (!data.name) errors.name = "Player's name can't be blank!";
-    if (!data.last_name) errors.last_name = "Player's last name can't be blank!";
-    if (!data.email) errors.email = "Player's email can't be blank!";
+    if (!data.name) errors.name = I18n.t('pages.players.player.form.errors.blank', { field: 'Name' });;
+    if (!data.last_name) errors.last_name = I18n.t('pages.players.player.form.errors.blank', { field: 'Last name' });
+    if (!data.email) errors.email = I18n.t('pages.players.player.form.errors.blank', { field: 'Email' });
     return errors;
   };
 
@@ -191,7 +191,7 @@ class PlayerForm extends Component {
                   <Translate value='pages.players.player.form.more'/>
                 </a>
                 <button type="submit" className="btn btn-secondary">
-                  <span><Translate value='pages.players.player.form.save'/></span>
+                  <Translate value='pages.players.player.form.save'/>
                 </button>
               </div>
             </form>

@@ -1,6 +1,9 @@
 import React from 'react';
 import PaginationPage from './pagination_page';
 
+import { I18n } from 'react-redux-i18n';
+import { Translate } from 'react-redux-i18n';
+
 function PagesRepeat(props) {
   let items = [],
       end, start;
@@ -19,10 +22,10 @@ function PagesRepeat(props) {
   return items;
 };
 
-const Pagination = ({ 
+const Pagination = ({
         pagesLength,
         currentPage,
-        
+
         searchRecords,
         changepage,
         prevHandler,
@@ -35,33 +38,33 @@ const Pagination = ({
       }) => {
 
   return (
-    <div className="form-inline fancy-pagination d-flex 
-                    justify-content-end align-items-center 
+    <div className="form-inline fancy-pagination d-flex
+                    justify-content-end align-items-center
                     mb-1 col-12 px-0" >
       <nav aria-label='Page navigation example text-right'>
         <ul className='pagination mb-0'>
           <li className = { currentPage === 0
-                              ? 'page-item disabled' 
+                              ? 'page-item disabled'
                               : 'page-item'}
               onClick  =  { currentPage !== 0
-                              ? firstHandler.bind(this) 
-                              : null } >
-            <a className = { currentPage === 0
-                                ? 'page-link disabled' 
-                                : 'page-link' } >
-              first
-            </a>
-          </li>
-          <li className = { currentPage === 0
-                              ? 'page-item disabled' 
-                              : 'page-item'}
-              onClick  =  { currentPage !== 0
-                              ? prevHandler.bind(this) 
+                              ? firstHandler.bind(this)
                               : null } >
             <a className = { currentPage === 0
                                 ? 'page-link disabled'
                                 : 'page-link' } >
-              prev
+              {I18n.t('shared.pagination.first')}
+            </a>
+          </li>
+          <li className = { currentPage === 0
+                              ? 'page-item disabled'
+                              : 'page-item'}
+              onClick  =  { currentPage !== 0
+                              ? prevHandler.bind(this)
+                              : null } >
+            <a className = { currentPage === 0
+                                ? 'page-link disabled'
+                                : 'page-link' } >
+              {I18n.t('shared.pagination.prev')}
             </a>
           </li>
           { currentPage > 2 &&
@@ -77,7 +80,7 @@ const Pagination = ({
                         breakPoints = { breakPoints } >
 
             { (index) => <PaginationPage  key={index} changepage={changepage}
-                                          pageIndex={index} active={(index === currentPage) ? 'active' : ''} /> 
+                                          pageIndex={index} active={(index === currentPage) ? 'active' : ''} />
                                         }
           </PagesRepeat>
           { currentPage < pagesLength - 3 &&
@@ -92,10 +95,10 @@ const Pagination = ({
                 (currentPage !== ( pagesLength - 1 )) ? nextHandler.bind(this) : null
               }
               >
-            <a className={currentPage ===  pagesLength - 1 
-                           ? 'page-link disabled' 
+            <a className={currentPage ===  pagesLength - 1
+                           ? 'page-link disabled'
                            : 'page-link'} >
-              next
+              {I18n.t('shared.pagination.next')}
             </a>
           </li>
           <li className={(currentPage === ( pagesLength - 1 )) ? 'page-item disabled' : 'page-item'}
@@ -104,24 +107,24 @@ const Pagination = ({
                           : null
                       } >
             <a className={(currentPage === ( pagesLength - 1 )) ? 'page-link disabled' : 'page-link'} >
-              last
+              {I18n.t('shared.pagination.last')}
             </a>
           </li>
         </ul>
       </nav>
       <p className='text-right my-0 ml-3'>
-        of {pagesLength} pages
+        <Translate value="shared.pagination.ofPages" count={pagesLength} />
       </p>
       <select className='custom-select ml-3'
               name='perPage'
               value={options.perPage}
               onChange={perPageOnChange} >
-        <option value='5'>  5   per page</option>
-        <option value='10'> 10  per page</option>
-        <option value='15'> 15  per page</option>
-        <option value='20'> 20  per page</option>
+        <option value='5'>{I18n.t('shared.pagination.itemsPerPage', { count: 5 })}</option>
+        <option value='10'>{I18n.t('shared.pagination.itemsPerPage', { count: 10 })}</option>
+        <option value='15'>{I18n.t('shared.pagination.itemsPerPage', { count: 15 })}</option>
+        <option value='20'>{I18n.t('shared.pagination.itemsPerPage', { count: 20 })}</option>
       </select>
-      <input type="text" className="form-control ml-3" placeholder="Search for..." 
+      <input type="text" className="form-control ml-3" placeholder={I18n.t('shared.pagination.searchFor')}
               onChange={ searchRecords.bind(this) }/>
     </div>
   );
