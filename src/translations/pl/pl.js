@@ -1,5 +1,19 @@
 const polishTranslations = {
   pl: {
+    charts: {
+      january: 'Styczeń',
+      february: 'Luty',
+      march: 'Marzec',
+      april: 'Kwiecień',
+      may: 'Maj',
+      june: 'Czerwiec',
+      july: 'Lipiec',
+      playedMatches: 'Rozegrane mecze',
+    },
+    home: {
+      mainHeader: 'Witaj w świecie piłkarzyków',
+      subheader: 'Ciesz się pięknem piłki stołowej',
+    },
     pages: {
       players: {
         mainHeader: 'Gracze',

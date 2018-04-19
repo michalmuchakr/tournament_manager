@@ -1,5 +1,19 @@
 const englishTranslations = {
   en: {
+    charts: {
+      january: 'January',
+      february: 'February',
+      march: 'March',
+      april: 'April',
+      may: 'May',
+      june: 'June',
+      july: 'July',
+      playedMatches: 'Matches Played',
+    },
+    home: {
+      mainHeader: 'Welcome to the world of foos',
+      subheader: 'Enjoy the beauty of the table soccer',
+    },
     pages: {
       players: {
         mainHeader: 'Players',

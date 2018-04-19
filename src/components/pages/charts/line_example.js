@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import {Line} from 'react-chartjs-2';
 
+import { I18n } from 'react-redux-i18n';
 
 class LineExample extends Component {
   constructor(props) {
     super(props);
     this.state = {
       data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels: [I18n.t('charts.january'), I18n.t('charts.february'), I18n.t('charts.march'),
+                 I18n.t('charts.april'), I18n.t('charts.may'), I18n.t('charts.june'),
+                 I18n.t('charts.july')],
         datasets: [
           {
-            label: 'Ilość rozegranych partii',
+            label: I18n.t('charts.playedMatches'),
             fill: false,
             lineTension: 0.1,
             backgroundColor: '#336AA8',
@@ -34,7 +37,7 @@ class LineExample extends Component {
       }
     }
   };
-  
+
   render() {
     return (
       <div>
