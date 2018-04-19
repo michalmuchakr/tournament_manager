@@ -7,6 +7,4 @@ const translationsObject = Object.assign(
   polishTranslations
 );
 
-console.log(translationsObject);
-
 export default translationsObject;
