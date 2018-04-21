@@ -91,7 +91,7 @@ class PlayersList extends Component {
         <div className="d-flex justify-content-between align-items-center">
           <div className="col-12">
             <div className="row d-flex justify-content-end">
-              <Pagination searchRecords = { this.searchRecords}
+              <Pagination searchRecords   = { this.searchRecords}
                           currentPage     = { this.state.currentPage }
                           breakPoints     = { this.state.breakPoints }
                           options         = { this.state.options }
