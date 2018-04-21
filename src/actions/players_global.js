@@ -38,7 +38,7 @@ export const deletePlayer = (data) => {
       headers: {
         "Content-type": "application/json"
       }
-    })
+    }).then(() => dispatch(fetchPlayers()))
   }
 }
 

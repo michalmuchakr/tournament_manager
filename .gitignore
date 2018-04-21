@@ -2,3 +2,7 @@
 /server/node_modules
 
 *.log
+/styles/*.css
+.gitignore
+package-lock.json
+package.json
