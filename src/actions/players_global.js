@@ -19,7 +19,6 @@ export const recivePlayers = (data) => {
 export const addPlayer = (data) => {
   return dispatch => {
     dispatch(setWaitPlayerForSave(true))
-    console.log(data);
     return fetch('/api/players', {
       method: 'post',
       body: JSON.stringify(data),

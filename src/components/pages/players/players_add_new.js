@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Translate } from 'react-redux-i18n';
 
 class AddNewPlayer extends Component {
   render() {
@@ -9,7 +10,7 @@ class AddNewPlayer extends Component {
                 data-toggle="modal"
                 data-target="#addEditPlayer"
                 onClick={ this.props.newPlayer } >
-          Add new player
+          <Translate value="pages.players.addNew" />
         </button>
       </div>
     );

@@ -21,7 +21,11 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   const player = new PlayerModel ({
           name: req.body.name,
+          last_name: req.body.last_name,
           email: req.body.email,
+          descript: req.body.descript,
+          position: req.body.position,
+          gender: req.body.gender,
           _id: req.body._id
         });
 

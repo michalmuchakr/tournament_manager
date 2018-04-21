@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import {Bar} from 'react-chartjs-2';
 
+import { I18n } from 'react-redux-i18n';
 
 class BarExample extends Component {
   constructor(props) {
     super(props);
     this.state = {
       data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels: [I18n.t('charts.january'), I18n.t('charts.february'), I18n.t('charts.march'),
+                 I18n.t('charts.april'), I18n.t('charts.may'), I18n.t('charts.june'),
+                 I18n.t('charts.july')],
         datasets: [
           {
-            label: 'Ilość rozegranych partii',
+            label: I18n.t('charts.playedMatches'),
             backgroundColor: '#404040',
             borderColor: '#404040',
             borderWidth: 1,
@@ -22,7 +25,7 @@ class BarExample extends Component {
       }
     }
   };
-  
+
 
   render() {
     return (

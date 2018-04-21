@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { i18nReducer } from 'react-redux-i18n';
 
 import players from './players';
 import games from './games';
@@ -9,7 +10,8 @@ const MainReducer = combineReducers({
   players,
   games,
   singleGame,
-  auth
+  auth,
+  i18n: i18nReducer,
 });
 
 export default MainReducer;
