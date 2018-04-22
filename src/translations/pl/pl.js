@@ -62,16 +62,17 @@ const polishTranslations = {
         logOut: 'Wyloguj'
       },
       pagination: {
-        first: 'Pierwsza',
-        prev: '<',
-        next: '>',
-        last: 'Ostatnia',
         ofPages: 'z %{count} stron',
         ofPages_1: 'z %{count} strony',
         itemsPerPage: '%{count} na stronie',
         searchFor: 'Wyszukaj...',
       },
     },
+    single_game: {
+      result_handler: {
+        finish: 'Finish Group Stage'
+      }
+    }
   },
 };
 
