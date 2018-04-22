@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import _ from 'lodash';
 
 import GroupResultSingleHeader from './group_result_single_header';
 import GroupResultSingleContent from './group_result_single_content';
+import { ResultSortHandler } from 'controllers/result_sort_handler';
 
 class GroupResultTab extends Component {
   constructor(props) {
@@ -22,14 +22,9 @@ class GroupResultTab extends Component {
   }
 
   sortAndGroupResults = (res) => {
-    let resultsToShow =  _.filter(res, (o) => { return o.points > -1 });
-        resultsToShow = _.orderBy(resultsToShow, ['points'], ['desc']);
-
-    let results = _.mapValues(_.groupBy(resultsToShow, 'groupIndex'));
-        results = _.values(results);
-
+    let results = ResultSortHandler.sortGroupResults(res);
     this.setState({ results });
-  } 
+  }
 
   render() {
     return (
