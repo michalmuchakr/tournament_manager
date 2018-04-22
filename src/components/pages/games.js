@@ -33,19 +33,19 @@ class Games extends Component {
           </h1>
           <div className="btn-group" role="group" aria-label="Games controll panel">
             {this.state.viewMode === 'list'
-              ? <button type="button" className="btn btn-secondary"
+              ? <button type="button" className="btn btn-outline-secondary"
                     name='groups'
                     onClick={this.viewModeChanged} >
                   <i className="fa fa-th" aria-hidden="true"></i>
                 </button>
-              : <button type="button" className="btn btn-secondary"
+              : <button type="button" className="btn btn-outline-secondary"
                     name='list'
                     onClick={this.viewModeChanged} >
                   <i className="fa fa-th-list" aria-hidden="true"></i>
                 </button>
             }        
             {this.props.currentUser &&
-              <button type="button" className="btn btn-secondary" 
+              <button type="button" className="btn btn-outline-secondary" 
                 data-toggle="modal"
                 data-target="#addNewGame">
                   Add new game

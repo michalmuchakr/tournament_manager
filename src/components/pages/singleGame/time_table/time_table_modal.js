@@ -102,13 +102,13 @@ class TimeTableModal extends Component {
       <div className='d-flex my-3'>
         <div className="btn-group mx-auto">
           {!this.props.tournamentHasStarted &&
-            <button type='button' className='btn btn-secondary' data-toggle='modal' data-target='#timeTableModal'>
+            <button type='button' className='btn btn-outline-secondary' data-toggle='modal' data-target='#timeTableModal'>
               <span className="fa fa-cogs mr-2" aria-hidden="true"></span>
               <span>Game Settings</span>
             </button>
           }
           {!this.props.tournamentHasStarted && (this.props.timetableLength > 0) &&
-              <button type='button' className='btn btn-secondary' onClick={() => this.props.tournamentStarted(this.props.gameId)}>
+              <button type='button' className='btn btn-outline-secondary' onClick={() => this.props.tournamentStarted(this.props.gameId)}>
                 Rozpocznij Turniej
               </button>
           }
@@ -195,7 +195,7 @@ class TimeTableModal extends Component {
                       className='btn btn-primary'
                       onClick={this.updateSettingsDb}>Save changes</button>
                   : <button 
-                      className='btn btn-secondary' 
+                      className='btn btn-outline-secondary' 
                       onClick = {this.props.generateTimeTable}>
                         {!this.props.waiting
                           ? 'Generuj terminarz'

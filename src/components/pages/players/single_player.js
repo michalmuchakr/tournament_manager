@@ -44,13 +44,13 @@ class SinglePlayer extends Component {
           {this.props.currentUser &&
             <div className="btn-group ml-auto" role="group" >
               <div onClick={() => this.props.editPlayer(this.props.player)}
-                    className="btn btn-secondary"
+                    className="btn btn-outline-secondary"
                     data-toggle="modal"
                     data-target="#addEditPlayer">
                 <Translate value="pages.players.player.edit" />
               </div>
 
-              <div onClick={() => this.handleDelete()} className="btn btn-secondary">
+              <div onClick={() => this.handleDelete()} className="btn btn-outline-secondary">
                 <Translate value="pages.players.player.archive" />
               </div>
             </div>

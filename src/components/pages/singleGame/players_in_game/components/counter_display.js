@@ -60,7 +60,7 @@ class CounterDisplay extends Component {
         <div className="col-6">
           <div className="row">
             <table className="table text-center mt-2 mb-0">
-              <thead className="thead-inverse">
+              <thead className="thead-dark">
                 <tr>
                   <th className="text-center w-33">Atak</th>
                   <th className="text-center w-33">Obrona</th>

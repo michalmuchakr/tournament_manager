@@ -37,7 +37,7 @@ class GameInfo extends Component {
             <h4 className="card-title">{this.props.game.name}</h4>
             <p className="card-text">{this.props.game.description.slice(0,50)} ... </p>
           </div>
-          <button className="btn btn-secondary btn-sm gameInfo_read-more p-2 px-3 collapsed"
+          <button className="btn btn-outline-secondary btn-sm gameInfo_read-more p-2 px-3 collapsed"
               type="button" 
               data-toggle="collapse" 
               data-target="#readMore" 
@@ -47,7 +47,7 @@ class GameInfo extends Component {
           </button>
         </div>
         <div className="collapse" id="readMore">
-          <div className="card card-block">
+          <div className="card card-block p-3">
             {this.props.game.description}
           </div>
         </div>

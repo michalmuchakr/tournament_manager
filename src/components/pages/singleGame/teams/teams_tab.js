@@ -63,7 +63,7 @@ class TeamsTab extends Component {
           ? <div className="col-12">
               <div className="row">
                 <button 
-                  className="btn btn-secondary d-block ml-auto m-3" 
+                  className="btn btn-outline-secondary d-block ml-auto m-3" 
                   onClick = {this.generateTeams}>
                     {!this.props.waiting
                       ? 'Generate Teams'
