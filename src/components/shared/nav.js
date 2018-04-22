@@ -56,7 +56,7 @@ class Nav extends Component {
               </Link>
             </li>
             <li className="nav-item dropdown ml-auto">
-              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a className="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {this.props.currentUser
                   ? <Translate value='shared.nav.welcomeUser' userName={this.props.currentUser.name} />
                   : <Translate value='shared.nav.userPanel' />
