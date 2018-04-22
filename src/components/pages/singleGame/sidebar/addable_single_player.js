@@ -46,7 +46,7 @@ class AddableSinglePlayer extends Component {
               <div className="form-group d-flex ml-auto mb-0">
                 <div className="input-group">
                   <span className="input-group-btn">
-                    <button className="btn btn-secondary add-player" type="button" onClick={() => this.addPlayerToList()}>
+                    <button className="btn btn-outline-secondary add-player" type="button" onClick={() => this.addPlayerToList()}>
                       <span className="fa fa-check" aria-hidden="true" />
                     </button>
                   </span>

@@ -6,7 +6,7 @@ class PlayersList extends Component {
   render() {
     return (
       <table className="table text-center mt-2">
-        <thead className="thead-inverse">
+        <thead className="thead-dark">
           <tr>
             <th className="text-center">#</th>
             <th className="text-center">player name</th>

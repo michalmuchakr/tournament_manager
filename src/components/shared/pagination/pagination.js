@@ -51,8 +51,8 @@ const Pagination = ({
                               : null } >
             <a className = { currentPage === 0
                                 ? 'page-link disabled'
-                                : 'page-link' } >
-              {I18n.t('shared.pagination.first')}
+                                : 'page-link'} >
+              <i className="fa fa-angle-double-left" aria-hidden="true" />
             </a>
           </li>
           <li className = { currentPage === 0
@@ -64,7 +64,7 @@ const Pagination = ({
             <a className = { currentPage === 0
                                 ? 'page-link disabled'
                                 : 'page-link' } >
-              {I18n.t('shared.pagination.prev')}
+              <i className="fa fa-angle-left" aria-hidden="true" />
             </a>
           </li>
           { currentPage > 2 &&
@@ -96,9 +96,9 @@ const Pagination = ({
               }
               >
             <a className={currentPage ===  pagesLength - 1
-                           ? 'page-link disabled'
-                           : 'page-link'} >
-              {I18n.t('shared.pagination.next')}
+                            ? 'page-link disabled'
+                            : 'page-link'} >
+              <i className="fa fa-angle-right" aria-hidden="true" />
             </a>
           </li>
           <li className={(currentPage === ( pagesLength - 1 )) ? 'page-item disabled' : 'page-item'}
@@ -106,8 +106,8 @@ const Pagination = ({
                           ? lastHandler.bind(this)
                           : null
                       } >
-            <a className={(currentPage === ( pagesLength - 1 )) ? 'page-link disabled' : 'page-link'} >
-              {I18n.t('shared.pagination.last')}
+            <a className={(currentPage === (pagesLength - 1)) ? 'page-link disabled' : 'page-link'} >
+              <i className="fa fa-angle-double-right" aria-hidden="true" />
             </a>
           </li>
         </ul>

@@ -10,7 +10,7 @@ class GroupResultSingleContent extends Component {
       <div id={link} className="collapse" role="tabpanel" aria-labelledby="headingOne">
         <div className="card-block">
           <table className="table">
-            <thead className="thead-inverse">
+            <thead className="thead-dark">
               <tr>
                 <th>#</th>
                 <th>Team</th>

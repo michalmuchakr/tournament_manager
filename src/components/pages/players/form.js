@@ -190,7 +190,7 @@ class PlayerForm extends Component {
                 <a className="btn btn-primary mr-auto" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                   <Translate value='pages.players.player.form.more'/>
                 </a>
-                <button type="submit" className="btn btn-secondary">
+                <button type="submit" className="btn btn-outline-secondary">
                   <Translate value='pages.players.player.form.save'/>
                 </button>
               </div>

@@ -148,10 +148,10 @@ class SingleMatch extends Component {
           <td>
             <div className="btn-group" role="group" aria-label="Basic example">
               {this.state.validSave && !this.props.waitingForTimeTable &&
-                  <button className="btn btn-secondary ml-auto"
+                  <button className="btn btn-outline-secondary ml-auto"
                             onClick = {this.saveResult}>Save</button>
               }
-              <button className="btn btn-secondary ml-auto"
+              <button className="btn btn-outline-secondary ml-auto"
                         onClick = {this.cancel}>Cancel</button>
             </div>
           </td>
@@ -159,7 +159,7 @@ class SingleMatch extends Component {
         {this.props.currentUser && !this.state.editing &&
           <td>
             <button
-              className="btn btn-secondary ml-auto"
+              className="btn btn-outline-secondary ml-auto"
               onClick = {this.editClicked}>Edit</button>
           </td>
         }

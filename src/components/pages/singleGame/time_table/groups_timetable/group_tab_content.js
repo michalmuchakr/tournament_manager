@@ -9,7 +9,7 @@ class GroupTabContent extends Component {
       <div className={"tab-pane " + (this.props.active ? 'active' : null)}
            id={link} role="tabpanel">
         <table className="table">
-          <thead className="thead-inverse">
+          <thead className="thead-dark">
             <tr>
               <th>#</th>
               <th>Team #1</th>

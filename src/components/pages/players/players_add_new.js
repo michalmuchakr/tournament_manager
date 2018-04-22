@@ -6,7 +6,7 @@ class AddNewPlayer extends Component {
     return (
       <div className="input-group ml-auto">
         <button type="button"
-                className="btn btn-secondary"
+                className="btn btn-outline-secondary"
                 data-toggle="modal"
                 data-target="#addEditPlayer"
                 onClick={ this.props.newPlayer } >

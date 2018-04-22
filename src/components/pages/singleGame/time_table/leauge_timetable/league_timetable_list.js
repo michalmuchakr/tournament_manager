@@ -6,7 +6,7 @@ class LeagueTimeTableList extends Component {
   render() {
     return (
       <table className="table">
-        <thead className="thead-inverse">
+        <thead className="thead-dark">
           <tr>
             <th>#</th>
             <th className="narrow">Team #1</th>
