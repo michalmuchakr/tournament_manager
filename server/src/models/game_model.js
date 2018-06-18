@@ -48,10 +48,13 @@ const GameSchema = new mongoose.Schema({
                 }
               ],
   finals: {
-            type: Object,
             teams: Array,
-            result: Array
+            result: {
+              type: Array,
+              default: [0,0]
+            },
           },
+  winners: Object,
   settings: {
               type: Array,
               default: [{

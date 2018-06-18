@@ -4,6 +4,9 @@ import { Translate } from 'react-redux-i18n';
 import { ResultSortHandler } from 'controllers/result_sort_handler';
 import { FinalsHandler } from 'controllers/finals_handler';
 import { saveSemiFinals } from "actions/";
+import { 
+  saveFinal,
+  saveTournamentWinners } from "actions/finals";
 
 class Summary extends Component {
   constructor(props) {
@@ -12,7 +15,7 @@ class Summary extends Component {
       results: [],
     }
   };
-
+  
   componentDidMount() {
     this.sortAndGroupResults(this.props.groupResults);
   }
@@ -39,9 +42,12 @@ class Summary extends Component {
       teams: FinalsHandler.getFinalMatch(this.props.semiFinals),
     }
 
-    console.log(final);
-    // this.props.saveSemiFinals(final, this.props.gameId);
-    
+    this.props.saveFinal(final, this.props.gameId);
+  }
+
+  finishTournament() {
+    let winner = FinalsHandler.getWinners(this.props.finals);
+    this.props.saveTournamentWinners(winner, this.props.gameId);
   }
 
   render() {
@@ -57,9 +63,12 @@ class Summary extends Component {
             <button 
               type="button" className="btn btn-outline-secondary"
               onClick={this.handleFinals.bind(this)}>
-              Finish Semi Finals
+                Finish Semi Finals
             </button>
-            <button type="button" className="btn btn-outline-secondary">Finish Finals</button>
+            <button type="button" className="btn btn-outline-secondary"
+              onClick={this.finishTournament.bind(this)} >
+              Finish Finals
+            </button>
           </div>
         </div>
       </div>
@@ -71,10 +80,13 @@ const mapStateToProps = (state) => ({
   gameId: state.singleGame[0]._id,
   groupResults: state.singleGame[0].results,
   semiFinals: state.singleGame[0].semiFinals,
+  finals: state.singleGame[0].finals,
 });
 
 const mapDispatchToProps = {
-  saveSemiFinals
+  saveSemiFinals,
+  saveFinal,
+  saveTournamentWinners,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Summary);

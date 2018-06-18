@@ -15,7 +15,7 @@ export default class SingleFinalMatch extends Component {
       },
       editing: false,
       validSave: false,
-      _id: this.props.match._id
+      _id: this.props.match._id || null
     }
   }
 
@@ -66,9 +66,11 @@ export default class SingleFinalMatch extends Component {
       validSave
     })
   }
+
   setEditingForTimeTable = (editing) => {
     this.setState({ editing });
   }
+
   saveResult = () => {
     this.setEditingForTimeTable(false);
     let data = {
@@ -79,7 +81,7 @@ export default class SingleFinalMatch extends Component {
       _id: this.state._id,
     }
 
-    this.props.saveSemiFinalResult(data, this.props.gameId);
+    this.props.saveResult(data, this.props.gameId);
 
     this.setState({
       ...this.state,

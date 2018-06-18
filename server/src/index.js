@@ -19,6 +19,10 @@ import matchToTimetable from './routes/match_to_timatable';
 import tournamentStarted from './routes/tournament_started';
 import groupmatchtotimetable from './routes/game_group_timetable';
 import semi_finals from './routes/semi_finals';
+import save_final from './routes/save_final';
+import save_final_result from './routes/save_final_result';
+import save_tournament_winners from './routes/save_tournament_winners';
+
 import set_result_semi_finals from './routes/set_result_semi_finals';
  
 import gameGroupTimetable from './routes/game_group_timetable';
@@ -74,6 +78,9 @@ app.use('/api/tournamentstarted', tournamentStarted);
 
 app.use('/api/semi_finals', semi_finals);
 app.use('/api/set_result_semi_finals', set_result_semi_finals);
+app.use('/api/save_final_result', save_final_result);
+app.use('/api/save_final', save_final);
+app.use('/api/save_tournament_winners', save_tournament_winners);
 
 app.use('/api/users', usersRoutes);
 
