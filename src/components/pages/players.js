@@ -49,7 +49,7 @@ class Players extends Component {
               </span>
             </h1>
             <div className="ml-auto">
-              <AddNewPlayer newPlayer={this.newPlayer}/>
+              <AddNewPlayer newPlayer={this.newPlayer} />
             </div>
           </div>
         </div>

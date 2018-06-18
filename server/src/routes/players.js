@@ -19,7 +19,7 @@ router.post('/', (req, res) => {
           email: req.body.email,
           descript: req.body.descript,
           position: req.body.position,
-          gender: req.body.gender,
+          gender: req.body.gender
         }),
         savePromise = new Promise((resolve, reject) => {
           player.save()
@@ -27,8 +27,13 @@ router.post('/', (req, res) => {
         });
 
   savePromise.then((value) => {
-    res.status(200).json({ mgs: 'ok' })
-  });
+    res.status(200).json({ mgs: value })
+  })
+  .catch((reason) => {
+    // validation 422
+    // brak dost 401
+      res.status(422).json(reason)
+    });
 });
 
 export default router;

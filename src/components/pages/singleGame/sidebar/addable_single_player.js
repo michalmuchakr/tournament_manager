@@ -40,7 +40,7 @@ class AddableSinglePlayer extends Component {
   render() {
     return (
       <div className="card mb-2">
-        <div className="card-block d-flex align-items-center p-2">
+        <div className="card-block d-flex align-items-center p-0">
           <h4 className="card-title mb-0">{ this.props.player.name }</h4>
             {this.props.currentUser &&
               <div className="form-group d-flex ml-auto mb-0">

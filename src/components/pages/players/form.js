@@ -57,6 +57,7 @@ class PlayerForm extends Component {
     this.setState({ errors })
 
     let isValid = Object.keys(errors).length === 0;
+
     if (isValid) {
       this.submitData(data);
     }
@@ -108,7 +109,7 @@ class PlayerForm extends Component {
                   <label htmlFor="playerNameInput">
                     <Translate value='pages.players.player.form.firstName'/>
                   </label>
-                  <input className="form-control" id='playerNameInput' type="text" name='name'
+                  <input className="form-control" id='playerNameInput' type='text' name='name'
                     autoComplete='name' value={this.state.data.name} onChange={this.onChange} />
                   <small className="form-text text-danger">{this.state.errors.name}</small>
                 </div>

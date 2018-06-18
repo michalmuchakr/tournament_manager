@@ -1,0 +1,27 @@
+.home_page{
+  .card-deck {
+    .card-title {
+      margin-bottom: .75rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      background: #fff;
+      padding: 5px 15px;
+      opacity: 0.7;
+      width: 258px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .card-body {
+      min-height: 200px;
+      font-family: 'Hind Siliguri', sans-serif;
+      font-size: 17px;
+    }
+    .date-stamp {
+      position: absolute;
+      bottom: 15px;
+    }
+  }
+}

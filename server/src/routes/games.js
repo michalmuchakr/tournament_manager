@@ -1,7 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
 const router = express.Router();
-
 const Schema = mongoose.Schema;
 
 import GameModel from '../models/game_model';

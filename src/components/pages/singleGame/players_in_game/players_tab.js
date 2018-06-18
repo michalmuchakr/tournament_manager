@@ -18,7 +18,7 @@ class PlayersTab extends Component {
 
   render() {
     return (
-      <div className="tab-pane active" id="players" role="tabpanel">
+      <div className="tab-pane" id="players" role="tabpanel">
 
       <CounterDisplay positions={this.props.positionsCounter} />
 

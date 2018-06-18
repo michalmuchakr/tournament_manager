@@ -18,7 +18,9 @@ import matchToResutls from './routes/match_to_result';
 import matchToTimetable from './routes/match_to_timatable';
 import tournamentStarted from './routes/tournament_started';
 import groupmatchtotimetable from './routes/game_group_timetable';
-
+import semi_finals from './routes/semi_finals';
+import set_result_semi_finals from './routes/set_result_semi_finals';
+ 
 import gameGroupTimetable from './routes/game_group_timetable';
 
 import usersRoutes from './routes/users';
@@ -34,10 +36,11 @@ const allowCrossDomain = function(req, res, next) {
   next();
 }
 
-mongoose.connect('mongodb://' + process.env.MONGO_URL , {
-  useMongoClient: true,
-  keepAlive: false,
-  connectTimeoutMS: 3000
+console.log('connecting');
+
+mongoose.connect('localhost/fs-dev1', {
+  useMongoClient: 1,
+  keepAlive: 1
 });
 
 const app = express();
@@ -69,10 +72,13 @@ app.use('/api/groupmatchtotimetable', groupmatchtotimetable);
 
 app.use('/api/tournamentstarted', tournamentStarted);
 
-app.use('/api/users', usersRoutes)
+app.use('/api/semi_finals', semi_finals);
+app.use('/api/set_result_semi_finals', set_result_semi_finals);
+
+app.use('/api/users', usersRoutes);
 
 db.on('error', console.error.bind(console, 'connection error:'));
 
 db.once('open', function() {
-  app.listen(process.env.MONGO_PORT, () => console.log('app listen at listen:' + process.env.MONGO_PORT));
+  app.listen(process.env.EXPRESS_PORT, () => console.log('Express listen at port:' + process.env.EXPRESS_PORT));
 });

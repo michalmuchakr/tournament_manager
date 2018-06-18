@@ -7,7 +7,7 @@ import ResultGameType from './result_game_type';
 
 class ResultTab extends Component {
   constructor(props) {
-    super(props);
+    super();
     this.state = {
       results: []
     }

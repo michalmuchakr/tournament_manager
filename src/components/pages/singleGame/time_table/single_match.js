@@ -7,10 +7,10 @@ import { saveGroupsMatchToResults } from 'actions/group_timetable';
 
 import { saveMatchToResults, setEditingForTimeTable } from 'actions/';
 import { ResultHandler } from 'controllers/result_handler';
+import EditResultSection from 'components/shared/edit_result_section';
+import EditBtnsSection from 'components/shared/edit_btns_section';
 
 import SingleTeam from './single_team';
-import StaticResult from './static_result';
-import EditResult from './edit_result';
 
 class SingleMatch extends Component {
   constructor(props) {
@@ -136,33 +136,19 @@ class SingleMatch extends Component {
         <td>
           <SingleTeam team={this.props.match.teams[1]}/>
         </td>
-        <td>
-          {this.props.currentUser && this.state.editing
-            ? <EditResult
-                result={this.state.result} 
-                resultChange={this.resultChange} />
-            : <StaticResult result={this.state.result} />
-          }
-        </td>
-        {this.props.currentUser && this.state.editing &&
-          <td>
-            <div className="btn-group" role="group" aria-label="Basic example">
-              {this.state.validSave && !this.props.waitingForTimeTable &&
-                  <button className="btn btn-outline-secondary ml-auto"
-                            onClick = {this.saveResult}>Save</button>
-              }
-              <button className="btn btn-outline-secondary ml-auto"
-                        onClick = {this.cancel}>Cancel</button>
-            </div>
-          </td>
-        }
-        {this.props.currentUser && !this.state.editing &&
-          <td>
-            <button
-              className="btn btn-outline-secondary ml-auto"
-              onClick = {this.editClicked}>Edit</button>
-          </td>
-        }
+        <EditResultSection 
+          currentUser={ this.props.currentUser } 
+          editing={ this.state.editing }
+          result={ this.state.result }
+          resultChange={ this.resultChange } />
+        <EditBtnsSection
+          currentUser={ this.props.currentUser }
+          editing={ this.state.editing }
+          validSave={ this.state.validSave }
+          waitingForTimeTable={this.props.waitingForTimeTable}
+          saveResult={this.saveResult}
+          cancel={this.cancel}
+          editClicked={this.editClicked} />
       </tr>
     );
   }

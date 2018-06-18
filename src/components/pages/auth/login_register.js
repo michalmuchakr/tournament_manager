@@ -27,7 +27,7 @@ class LogInRegister extends Component {
 
   onFormSubmit(e) {
     e.preventDefault()
-    this.login()
+    this.register()
   }
   
   register() {
@@ -64,7 +64,6 @@ class LogInRegister extends Component {
 
         {/* Tab panes */}
         <div className='tab-content'>
-          <div className='tab-pane active' id='login' role='tabpanel'>
             {/* Login form */}
             <div className='form-group'>
               <h3 className='h5 mb-3'>Welcome back, player</h3>
@@ -78,10 +77,9 @@ class LogInRegister extends Component {
                       type='password' aria-describedby='password' placeholder='Pls enter your password' />
               <button type='submit' className='btn btn-primary btn-block mt-4'>Log in</button>
             </div>
-          </div>
 
-          {/* Register form 
-            <div className='tab-pane col-11 m-auto' id='register' role='tabpanel'>
+            {/* Reg form */}
+            {/* <div className='tab-pane col-11 m-auto active' id='register' role='tabpanel'>
               <h3 className='h5 mb-3'>Welcome, new user</h3>
 
               <div className="form-group">
@@ -105,8 +103,8 @@ class LogInRegister extends Component {
                 <input value={this.state.confirm_password} name="confirm_password" className="form-control" id="confirm_password" 
                         type="password" aria-describedby="password" placeholder="Pls enter your password" />
               </div>
-            </div>
-          */}
+            </div> */}
+         
         </div>
       </form>
   )}

@@ -8,7 +8,7 @@ const validation = (data) => {
   const id = data.id,
         isValid = mongoose.Types.ObjectId.isValid(id);
   return isValid;
-}
+};
 
 router.get('/:id', (req, res) => {
   const isValid = validation(req.params);

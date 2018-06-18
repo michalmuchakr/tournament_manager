@@ -19,7 +19,7 @@ const GameSchema = new mongoose.Schema({
               {
                 teams: Array,
                 result: Array,
-                groupIndex: Number,
+                groupIndex: Number
               }
             ],
   results: {
@@ -38,6 +38,20 @@ const GameSchema = new mongoose.Schema({
                 },
               }
             },
+  semiFinals: [
+                {
+                  teams: Array,
+                  result: {
+                    type: Array,
+                    default: [0,0]
+                  },
+                }
+              ],
+  finals: {
+            type: Object,
+            teams: Array,
+            result: Array
+          },
   settings: {
               type: Array,
               default: [{

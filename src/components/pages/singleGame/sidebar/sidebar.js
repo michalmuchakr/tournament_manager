@@ -34,12 +34,12 @@ class AddablePlayers extends Component {
 
   render() {
     return (
-      <div className="col-6 sticker">
+      <div className="col-5 sticker sidebar">
         {!this.props.tournamentStarted
           ? <div className="players">
               { this.state.availableToAdd.length > 0
                 ? <AddablePlayersList availableToAdd={this.state.availableToAdd} />
-                : <Message 
+                : <Message
                     mgsRole='info' 
                     mgs='No players available to add!' />
               }

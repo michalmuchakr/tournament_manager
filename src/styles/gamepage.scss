@@ -1,4 +1,52 @@
-.sticker > .players {
-  height: 90vh;
-  overflow: auto; 
+.single_game_page {
+  .gameInfo {
+    border: none;
+    border-right: 1px solid rgba(0,0,0,.125);
+  }
+  .sidebar {
+    & > .players {
+      height: 90vh;
+      overflow: auto;
+      .card {
+        margin-right: 15px;
+        border: none;
+        border-bottom: 1px solid rgba(0,0,0,.125); 
+      }
+      .card-block {
+        height: 40px;
+        padding: 0;
+        .card-title {
+          font-size: 20px;
+          padding-left: 15px;
+        }
+        .input-group {
+          margin: 0 -1px -3px 0;
+          .add-player {
+            border: none;
+            border-radius: 0;
+            position: relative;
+            top: 1px;
+          }
+          select {
+            height: 37px;
+            border-radius: 0;
+            border: none;
+            border-left: 1px solid #dfdfdf;
+          }
+        }
+      }
+    }
+    .results {
+      .card {
+        border: none;
+        .card-header {
+          background-color: white;
+          padding: 0;
+          .result-header-link {
+            padding: 15px 10px;
+          }
+        }
+      }
+    }
+  }
 }
