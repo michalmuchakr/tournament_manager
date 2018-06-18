@@ -1,17 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import SingleFinalMatch from './single_final_match';
-import { saveSemiFinalResult } from 'actions/finals'
+import FinalTabHeader from './final_tab_header';
+import { saveSemiFinalResult } from 'actions/finals';
 
 class SemiFinals extends Component {
   render() {
     return (
       <React.Fragment>
-        <tr>
-          <td colSpan="5">
-            <span>Semi Finals</span>
-          </td>
-        </tr>
+        <FinalTabHeader name="Semi Finals"/>
         { this.props.semiFinals.map((match, index) => {
             return <SingleFinalMatch
                       gameId={ this.props.gameId }
@@ -19,7 +16,7 @@ class SemiFinals extends Component {
                       match={ match }
                       index={ index }
                       currentUser={ this.props.currentUser }
-                      saveSemiFinalResult={ this.props.saveSemiFinalResult } />
+                      saveResult={ this.props.saveSemiFinalResult } />
           })
         }
       </React.Fragment>

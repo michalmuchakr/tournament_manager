@@ -124,5 +124,9 @@ export const FinalsHandler = {
       winnerIndex = tempResult.indexOf(10);
 
     return semiFinal.teams[winnerIndex];
+  },
+  getWinners(final) {
+    const winnerIndex = final.result.indexOf(10);
+    return final.teams[winnerIndex];
   }
 }

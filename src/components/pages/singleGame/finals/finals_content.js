@@ -1,10 +1,11 @@
 import React from 'react'
 import SemiFinals from './semi_finals';
+import Final from './final';
 
 function FinalsContent() {
   return (
     <React.Fragment >
-      {/* <Finals /> */}
+      <Final />
       <SemiFinals />
     </React.Fragment >
   )

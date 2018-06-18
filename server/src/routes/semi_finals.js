@@ -11,7 +11,7 @@ router.put('/:id', (req, res) => {
 
   GameModel.update({_id: gameId}, { $set: { "semiFinals": req.body.semiFinals } }, (err, doc) => {
     if (doc) {
-      res.status(200).json({ ok: 'doc' });
+      res.status(200).json({ doc });
     } else {
       res.status(404).json({ errors: { global: 'Nothing to update' } })
     }
