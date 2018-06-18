@@ -4,7 +4,8 @@ export const addPlayersToDb = (data, gameId) => {
       method: 'put',
       body: JSON.stringify(data),
       headers: {
-        "Content-type": "application/json"
+        'content-type': 'application/json',
+        
       }
     })
   }

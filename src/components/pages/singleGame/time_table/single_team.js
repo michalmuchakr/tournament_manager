@@ -31,7 +31,6 @@ class SingleTeam extends Component {
     this.setState({ team });
     return true;
   };
-  
 
   render() {
     return (
@@ -43,12 +42,13 @@ class SingleTeam extends Component {
       </div>
     );
   }
-}
+};
 
 function mapStateToProps(state) {
   return {
     allTeams: state.singleGame[0].teams,
     allplayers: state.players.playersList
   }
-}
+};
+
 export default connect( mapStateToProps )(SingleTeam);

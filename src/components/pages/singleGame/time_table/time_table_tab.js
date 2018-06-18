@@ -66,7 +66,7 @@ class TimeTableTab extends Component {
 
   render() {
     return (
-      <div className="tab-pane" id="time-table" role="tabpanel">
+      <div className="tab-pane" id="time_table" role="tabpanel">
         {this.state.validTimeTable.valid
           ? <div className="col-12">
               <TimeTableModal

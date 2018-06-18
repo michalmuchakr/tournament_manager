@@ -1,3 +1,37 @@
-.sticker > .players {
+.single_game_page .gameInfo {
+  border: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.125); }
+
+.single_game_page .sidebar > .players {
   height: 90vh;
   overflow: auto; }
+  .single_game_page .sidebar > .players .card {
+    margin-right: 15px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
+  .single_game_page .sidebar > .players .card-block {
+    height: 40px;
+    padding: 0; }
+    .single_game_page .sidebar > .players .card-block .card-title {
+      font-size: 20px;
+      padding-left: 15px; }
+    .single_game_page .sidebar > .players .card-block .input-group {
+      margin: 0 -1px -3px 0; }
+      .single_game_page .sidebar > .players .card-block .input-group .add-player {
+        border: none;
+        border-radius: 0;
+        position: relative;
+        top: 1px; }
+      .single_game_page .sidebar > .players .card-block .input-group select {
+        height: 37px;
+        border-radius: 0;
+        border: none;
+        border-left: 1px solid #dfdfdf; }
+
+.single_game_page .sidebar .results .card {
+  border: none; }
+  .single_game_page .sidebar .results .card .card-header {
+    background-color: white;
+    padding: 0; }
+    .single_game_page .sidebar .results .card .card-header .result-header-link {
+      padding: 15px 10px; }

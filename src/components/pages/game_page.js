@@ -37,7 +37,7 @@ class GamePage extends Component {
 
   render() {
     return (
-      <div className='col-11 mt-3 mx-auto'>
+      <div className='col-12 mt-3 mx-auto single_game_page'>
         { !this.state.wait_fetch_players & !this.state.wait_fetch_game
           ? <div className="row align-items-start">
               <GameInfo />

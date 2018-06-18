@@ -69,7 +69,7 @@ const Pagination = ({
           </li>
           { currentPage > 2 &&
             <li>
-              <a className = 'page-link mx-2' >
+              <a className = 'page-link' >
                 ...
               </a>
             </li>
@@ -85,7 +85,7 @@ const Pagination = ({
           </PagesRepeat>
           { currentPage < pagesLength - 3 &&
             <li>
-              <a className = 'page-link mx-2' >
+              <a className = 'page-link' >
                 ...
               </a>
             </li>

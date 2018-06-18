@@ -1,22 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500");
+@import url("https://fonts.googleapis.com/css?family=Hind+Siliguri:500");
 html {
   height: 100%; }
-
-nav.navbar {
-  padding: 3px 16px;
-  border-bottom: 2px solid #BE4248; }
-  nav.navbar .auth {
-    min-width: 315px; }
-    nav.navbar .auth .nav-link {
-      color: #292b2c; }
-      nav.navbar .auth .nav-link .active {
-        border: 1px solid #be4248; }
-        nav.navbar .auth .nav-link .active:hover {
-          color: #292b2c; }
 
 .app {
   min-height: 100vh;
   position: relative;
-  padding-bottom: 40px; }
+  padding-bottom: 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400; }
 
 .pageHeader {
   justify-content: space-between;

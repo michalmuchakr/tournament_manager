@@ -5,6 +5,8 @@ import GameTabsNav from './game_tabs_nav';
 import TimeTableTab from './time_table/time_table_tab';
 import TeamsTab from './teams/teams_tab';
 import PlayersTab from './players_in_game/players_tab';
+import InfoTab from './info_tab/info_tab_index';
+import FinalsTab from './finals/finals_tab';
 
 class GameInfo extends Component {
   constructor(props) {
@@ -30,33 +32,17 @@ class GameInfo extends Component {
 
   render() {
     return (
-      <div className="gameInfo col-6 card mb-3 px-0">
-        <img src={require('images/kicker.jpg')} className='w-100' alt='tournament img'/>
-        <div className="card-header d-flex justify-content-between align-items-end">
-          <div className="gameInfo_description">
-            <h4 className="card-title">{this.props.game.name}</h4>
-            <p className="card-text">{this.props.game.description.slice(0,50)} ... </p>
-          </div>
-          <button className="btn btn-outline-secondary btn-sm gameInfo_read-more p-2 px-3 collapsed"
-              type="button" 
-              data-toggle="collapse" 
-              data-target="#readMore" 
-              aria-expanded="false" 
-              aria-controls="collapseExample" >
-            <i className="fa fa-comment-o pr-2"  aria-hidden="true"></i> Read more {this.props.game.tournamentData.slice(0,10)}
-          </button>
-        </div>
-        <div className="collapse" id="readMore">
-          <div className="card card-block p-3">
-            {this.props.game.description}
-          </div>
-        </div>
-        <div className="card-body">
-          <GameTabsNav />
+      <div className="gameInfo col-7 card mb-3 px-0">
+        <div className="card-body py-0">
+          <GameTabsNav game={ this.props.game }/>
           <div className="tab-content">
+            <InfoTab name={this.props.game.name} description={this.props.game.description} tournamentDat={this.props.game.tournamentDat}/>
             <PlayersTab positionsCounter={this.state.positionsCounter} />
             <TeamsTab positionsCounter={this.state.positionsCounter} />
             <TimeTableTab />
+            {this.props.game.semiFinals &&
+              <FinalsTab />
+            }
           </div>
         </div>
       </div>

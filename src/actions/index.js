@@ -2,7 +2,12 @@
 
 export const fetchGames = () => {
   return dispatch => {
-    return fetch("/api/games")
+    return fetch("/api/games", {
+      headers: {
+        'content-type': 'application/json',
+        
+      }
+    })
       .then(response => response.json())
       .then(data => dispatch(reciveGames(data)))
   }
@@ -21,7 +26,7 @@ export const saveGame = (data) => {
       method: 'post',
       body: JSON.stringify(data),
       headers: {
-        "Content-type": "application/json"
+        'content-type': 'application/json',
       }
     }).then(() => dispatch(fetchGames()))
   }
@@ -38,7 +43,12 @@ export const addGame = (name) => {
 
 export const fetchSingleGame = (gameId) => {
   return dispatch => {
-    return fetch(`/api/singlegame/${gameId}`)
+    return fetch(`/api/singlegame/${gameId}`, {
+      headers: {
+        'content-type': 'application/json',
+        
+      }
+    })
       .then(response => response.json())
       .then(data => dispatch(reciveSingleGame(data)))
       .then((res) => dispatch(setWaiting(false)))
@@ -86,7 +96,8 @@ export const addTeamsToDb = (data, gameId) => {
       method: 'put',
       body: JSON.stringify(data),
       headers: {
-        "Content-type": "application/json"
+        'content-type': 'application/json',
+        
       }
     }).then(() => dispatch(fetchSingleGame(gameId)))
   }
@@ -113,7 +124,8 @@ export const saveTimeTableToBb = (data, gameId) => {
       method: 'put',
       body: JSON.stringify(data),
       headers: {
-        "Content-type": "application/json"
+        'content-type': 'application/json',
+        
       }
     }).then(() => dispatch(fetchSingleGame(gameId)))
   };
@@ -125,11 +137,26 @@ export const saveGroupTimeTableToBb = (data, gameId) => {
       method: 'put',
       body: JSON.stringify(data),
       headers: {
-        "Content-type": "application/json"
+        'content-type': 'application/json',
+        
       }
     }).then(() => dispatch(fetchSingleGame(gameId)))
   };
 }
+
+export const saveSemiFinals = (data, gameId) => {
+  return dispatch => {
+    return fetch(`/api/semi_finals/${gameId}`, {
+      method: 'put',
+      body: JSON.stringify(data),
+      headers: {
+        'content-type': 'application/json',
+        
+      }
+    }).then(() => dispatch(fetchSingleGame(gameId)))
+  };
+}
+
 
 export const saveResultsToBb = (data, gameId) => {
   return dispatch => {
@@ -137,7 +164,8 @@ export const saveResultsToBb = (data, gameId) => {
       method: 'put',
       body: JSON.stringify(data),
       headers: {
-        "Content-type": "application/json"
+        'content-type': 'application/json',
+        
       }
     }).then(() => dispatch(fetchSingleGame(gameId)))
   };
@@ -150,7 +178,8 @@ export const saveGameProps = (data, gameId) => {
       method: 'put',
       body: JSON.stringify(data),
       headers: {
-        "Content-type": "application/json"
+        'content-type': 'application/json',
+        
       }
     }).then(() => dispatch(fetchSingleGame(gameId)))
   }
@@ -162,7 +191,8 @@ export const saveMatchToTimetable = (data, gameId) => {
       method: 'put',
       body: JSON.stringify(data),
       headers: {
-        "Content-type": "application/json"
+        'content-type': 'application/json',
+        
       }
     })
   }
@@ -174,7 +204,8 @@ export const saveMatchToResults = (data, gameId) => {
       method: 'put',
       body: JSON.stringify(data),
       headers: {
-        "Content-type": "application/json"
+        'content-type': 'application/json',
+        
       }
     }).then(() => dispatch(fetchSingleGame(gameId)))
       .then(() => dispatch(setEditingForTimeTable(false)))
@@ -185,7 +216,8 @@ export const tournamentStarted = (gameId) => {
     return fetch(`/api/tournamentstarted/${gameId}`, {
       method: 'put',
       headers: {
-        "Content-type": "application/json"
+        'content-type': 'application/json',
+        
       }
     }).then(() => dispatch(fetchSingleGame(gameId)))
   }

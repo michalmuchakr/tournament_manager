@@ -72,6 +72,11 @@ const englishTranslations = {
         searchFor: 'Search for...',
       },
     },
+    single_game: {
+      result_handler: {
+        finish: 'Finish Group Stage'
+      }
+    }
   },
 };
 

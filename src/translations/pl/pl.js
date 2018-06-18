@@ -55,23 +55,26 @@ const polishTranslations = {
         brand: 'Manager Turniejów',
         home: 'Start',
         players: 'Gracze',
+        player: 'Gracz',
         games: 'Turnieje',
+        stats: 'Statystyki',
         userPanel: 'Panel Użytkownika',
         welcomeUser: 'Witaj, %{userName}',
         adminDashboard: 'Panel Administratora',
         logOut: 'Wyloguj'
       },
       pagination: {
-        first: 'Pierwsza',
-        prev: '<',
-        next: '>',
-        last: 'Ostatnia',
         ofPages: 'z %{count} stron',
         ofPages_1: 'z %{count} strony',
         itemsPerPage: '%{count} na stronie',
         searchFor: 'Wyszukaj...',
       },
     },
+    single_game: {
+      result_handler: {
+        finish: 'Zakończ fazę grupową'
+      }
+    }
   },
 };
 

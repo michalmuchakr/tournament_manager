@@ -6,7 +6,7 @@ class GroupResultSingleHeader extends Component {
     return (
       <div className='card-header' role='tab'>
         <h5 className='mb-0'>
-          <a className='d-flex justify-content-between' data-toggle='collapse' data-parent='#accordion' 
+          <a className='d-flex justify-content-between result-header-link' data-toggle='collapse' data-parent='#accordion' 
             href={link} aria-expanded='false'>
             <span className='group'>Group {this.props.index}</span>
           </a>

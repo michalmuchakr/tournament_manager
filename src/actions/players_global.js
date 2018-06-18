@@ -2,10 +2,17 @@
 
 export const fetchPlayers = () => {
   return dispatch => {
-    return fetch("/api/players")
-      .then(response => response.json())
+    return fetch('/api/players',{
+      headers: {
+        'content-type': 'application/json',
+        
+      }
+    }).then(response => response.json())
       .then(data => dispatch(recivePlayers(data)))
       .then(() => dispatch(setWaitPlayers(false)))
+      .catch( err => {
+        console.log("error: ", err);
+      })
   }
 }
 
@@ -23,7 +30,8 @@ export const addPlayer = (data) => {
       method: 'post',
       body: JSON.stringify(data),
       headers: {
-        "Content-type": "application/json"
+        'content-type': 'application/json',
+        
       }
     }).then(() => dispatch(fetchPlayers()))
       .then(() => dispatch(setWaitPlayerForSave(false)))
@@ -36,7 +44,8 @@ export const deletePlayer = (data) => {
       method: 'post',
       body: JSON.stringify(data),
       headers: {
-        "Content-type": "application/json"
+        'content-type': 'application/json',
+        
       }
     }).then(() => dispatch(fetchPlayers()))
   }
@@ -49,7 +58,8 @@ export const updatePlayer = (data) => {
       method: 'post',
       body: JSON.stringify(data),
       headers: {
-        "Content-type": "application/json"
+        'content-type': 'application/json',
+        
       }
     }).then(() => dispatch(fetchPlayers()))
       .then(() => dispatch(setWaitPlayerForSave(false)))
