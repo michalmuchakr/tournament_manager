@@ -66,7 +66,9 @@ footer h6 {
   white-space: nowrap;
   width: 12em;
   overflow: hidden;
-  text-overflow: ellipsis; }
+  text-overflow: ellipsis;
+  line-height: 28px;
+  font-size: 20px; }
 
 .w-33 {
   width: 33.33333333%; }
