@@ -7,7 +7,7 @@ import { fetchPlayers } from 'actions/players_global';
 import Message from 'components/messages/message';
 import SideBar from './singleGame/sidebar/sidebar';
 import GameInfo from './singleGame/game_info';
-
+import Winners from './singleGame/winners';
 import 'styles/gamepage.css';
 
 class GamePage extends Component {
@@ -38,8 +38,10 @@ class GamePage extends Component {
   render() {
     return (
       <div className='col-12 mt-3 mx-auto single_game_page'>
+
         { !this.state.wait_fetch_players & !this.state.wait_fetch_game
           ? <div className="row align-items-start">
+              <Winners />
               <GameInfo />
               <SideBar />
             </div>
@@ -51,7 +53,6 @@ class GamePage extends Component {
     );
   };
 };
-
 
 const mapDispatchToProps = {
   fetchSingleGame,
