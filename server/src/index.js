@@ -30,7 +30,7 @@ import gameGroupTimetable from './routes/game_group_timetable';
 import usersRoutes from './routes/users';
 
 if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').load();
+  require('dotenv').config();
 }
 
 const allowCrossDomain = function(req, res, next) {
@@ -42,9 +42,10 @@ const allowCrossDomain = function(req, res, next) {
 
 console.log('connecting');
 
-mongoose.connect('localhost/fs-dev1', {
-  useMongoClient: 1,
-  keepAlive: 1
+mongoose.connect('mongodb://localhost/fs-dev1', {
+  keepAlive: 1,
+  useNewUrlParser: true,
+  useCreateIndex: true
 });
 
 const app = express();
@@ -87,5 +88,5 @@ app.use('/api/users', usersRoutes);
 db.on('error', console.error.bind(console, 'connection error:'));
 
 db.once('open', function() {
-  app.listen(process.env.EXPRESS_PORT, () => console.log('Express listen at port:' + process.env.EXPRESS_PORT));
+  app.listen(9000, () => console.log('Express listen at port:' + process.env.EXPRESS_PORT));
 });
