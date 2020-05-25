@@ -1,3 +1,5 @@
+### Outdated
+
 Welcome to Table Football Tournament managment MERN App.
 
 Enjoy!
