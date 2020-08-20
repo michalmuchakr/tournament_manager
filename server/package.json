@@ -10,7 +10,7 @@
   "author": "Michal Mucha",
   "license": "MIT",
   "dependencies": {
-    "bcrypt": "^3.0.5",
+    "bcrypt": "^5.0.0",
     "bcrypt-nodejs": "0.0.3",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
